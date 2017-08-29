@@ -13,6 +13,7 @@ import kotlinx.android.synthetic.main.activity_chat.*
 import kotlinx.coroutines.experimental.CommonPool
 import kotlinx.coroutines.experimental.android.UI
 import kotlinx.coroutines.experimental.async
+import kotlinx.coroutines.experimental.delay
 import java.util.*
 
 class ChatActivity : AppCompatActivity() {
@@ -50,7 +51,7 @@ class ChatActivity : AppCompatActivity() {
     private fun getResult(message: String) = async(UI) {
         // TODO get results from API
         async(CommonPool) {
-            Thread.sleep(400)
+            delay(400)
         }.await()
 
         val chatMessage = ChatMessage("<结果>", false, false)
